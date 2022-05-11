@@ -34,3 +34,106 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
+/*reset*/
+ol, ul {
+	list-style: none;
+}
+
+/* layout*/
+body {
+    background-color:  #fff;
+    font-family: Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
+}
+
+/*header*/
+header {
+    background-color: black;
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+header>img {
+    height: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+
+/* nav de los tipos de musica con imagenes*/
+.navMusicStyle {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.navMusicStyle>li{
+    box-sizing:border-box;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem 1.2rem;
+    font-weight: 600;
+}
+
+.rock{
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: sepia(90%);
+}
+
+.hip-hop{
+    background-image: url( "https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.indie{
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(50%);
+}
+
+.jazz{
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: hue-rotate(90deg);;
+}
+
+.reggae{
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: saturate(10%);;
+}
+
+/*nav de las tres opciones de lista: overview, top 10, the biggest*/
+
+.navListas {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.navListas>li{
+    padding: 0.2rem 1rem; 
+}
+ 
+/*section de las canciones */
+.listaCanciones>h2 {
+padding-left: 1.6rem;
+}
+
+
+.listaCanciones>li ::before {
+    content: counter(step-count);
+    counter-increment: step-count;
+}
