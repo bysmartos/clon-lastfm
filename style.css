@@ -35,7 +35,7 @@ reggae: saturate(10%);
  */
 
 /*reset*/
-ol, ul {
+ ul {
 	list-style: none;
 }
 
