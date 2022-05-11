@@ -30,7 +30,7 @@ reggae: saturate(10%);
     font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
 
 */
-
+ 
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
@@ -128,12 +128,12 @@ header>img {
 }
  
 /*section de las canciones */
-.listaCanciones>h2 {
+.songsContainer>h2 {
 padding-left: 1.6rem;
 }
 
 
-.listaCanciones>li ::before {
+.songsContainer>li ::before {
     content: counter(step-count);
     counter-increment: step-count;
 }
