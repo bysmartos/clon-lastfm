@@ -94,9 +94,39 @@ function cargarJSON(){
     };
     
 
+   
 
 
 //Sara escribe debajo de esta linea
+
+// USER STORY 3:  Cuando clico en la opción "Top 10 listened"  puedo ver un listado con las 10 canciones más escuchadas
+let top10text = document.querySelector("#top10")
+ top10text.addEventListener("click", listaTop10);
+function listaTop10(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let dataOrdenado= data.sort(function (a, b) {
+                if (parseInt(a.listeners) > parseInt(b.listeners)) {
+                    return -1;
+                } else if (parseInt(a.listeners) < parseInt(b.listeners)) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+            console.log(dataOrdenado);
+        
+        let top10Array= dataOrdenado.slice(0,10);
+        top10Array.forEach(song => {
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        })
+        
+    };
+
 
 
 //Helena escribe debajo de esta linea
@@ -106,5 +136,3 @@ const overview=document.querySelector("#overview")
 overview.addEventListener('click', cargarJSON);
 //U5
 
-
-    

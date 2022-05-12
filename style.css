@@ -149,10 +149,9 @@ padding-left: 4.2rem;
     list-style: none;
 } 
 
-.songs > li:before {
+.songs > li> .songArtist:before {
     counter-increment: li;
     content: counter(li)". ";
-   ;
 }
 
  .songBold{
