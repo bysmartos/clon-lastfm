@@ -129,11 +129,49 @@ header>img {
  
 /*section de las canciones */
 .songsContainer>h2 {
-padding-left: 1.6rem;
+padding-left: 4.2rem;
 }
 
+.songs>li{
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
 
-.songsContainer>li ::before {
-    content: counter(step-count);
-    counter-increment: step-count;
+} 
+.songs>li>img {
+    width: 2.4rem;
 }
+
+ .songs {
+    counter-reset: li;
+    list-style: none;
+} 
+
+.songs > li:before {
+    counter-increment: li;
+    content: counter(li)". ";
+   ;
+}
+
+ .songBold{
+    font-weight: bold;
+    width: 60%;     
+}
+
+.songArtist{
+    text-align:start;
+    width: 20%;
+    
+}
+
+ol> :nth-child(odd){
+    background-color: #f2f2f2;
+} 
+
+
+li :nth-child(odd){
+    background-color: transparent;
+} 
+
