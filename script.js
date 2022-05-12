@@ -42,6 +42,19 @@ window.addEventListener("load", cargarJSON);
 //          document.querySelector(".songs").innerHTML=html;
 //      });
 // }
+//Funciona bien, lo cometno para probar de hacer la user story 10
+// function cargarJSON(){
+//     fetch("music.json")
+//      .then(res => res.json())
+//      .then(function(data){
+//          let html="";
+//          data.forEach(song => {
+//              html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+//          });
+//          document.querySelector(".songs").innerHTML=html;
+         
+//      });
+// }
 
 function cargarJSON(){
     fetch("music.json")
@@ -49,12 +62,14 @@ function cargarJSON(){
      .then(function(data){
          let html="";
          data.forEach(song => {
-             html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+             html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
          });
          document.querySelector(".songs").innerHTML=html;
+        
          
      });
 }
+
 
  //USER STORY 4: Cuando clico en la opción "Rock" de la barra superior Entonces puedo ver un listado con las canciones más escuchadas del género rock
  let rock = document.querySelector(".rock")
@@ -67,7 +82,7 @@ function cargarJSON(){
         let html="";
         let rockArray= data.filter(song => song.genres.includes("rock") )
         rockArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -86,15 +101,15 @@ function cargarJSON(){
         let html="";
         let indieArray= data.filter(song => song.genres.includes("indie") )
         indieArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
         
     };
-    
 
-   
+    //USER STORY 10: Dado que estoy en la página principal y veo una lista de canciones Cuando hago click en una de ellas Entonces se abre la página de la canción con toda su información
+  
 
 
 //Sara escribe debajo de esta linea
@@ -120,7 +135,7 @@ function listaTop10(){
         
         let top10Array= dataOrdenado.slice(0,10);
         top10Array.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
