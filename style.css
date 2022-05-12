@@ -135,7 +135,7 @@ header>img {
 padding-left: 4.2rem;
 }
 
-.songs>li>a{
+.songs>li{
     height: 2.4rem;
     display: flex;
     align-items: center;
@@ -143,7 +143,7 @@ padding-left: 4.2rem;
    
 
 } 
-.songs>li>a>img {
+.songs>li>img {
     width: 2.4rem;
 }
 
@@ -153,7 +153,7 @@ padding-left: 4.2rem;
     list-style: none;
 } 
 
-.songs > li>a> .songArtist:before {
+.songs > li> .songArtist:before {
     counter-increment: li;
     content: counter(li)". ";
 }

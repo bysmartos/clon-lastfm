@@ -28,7 +28,8 @@
 
     
  //USER STORY 1: se carga el listado JSON  con todas las canciones al cargar la pagina  
-window.addEventListener("load", cargarJSON);
+ //USER STORY 10: Dado que estoy en la página principal y veo una lista de canciones Cuando hago click en una de ellas Entonces se abre la página de la canción con toda su información
+ window.addEventListener("load", cargarJSON);
 //Esto funciona, pero lo he copiado debajo para probar cosas y de momento funciona bien, me guardo este comentado por si lo necesito mas adelnate
 
 // function cargarJSON(){
@@ -62,7 +63,7 @@ function cargarJSON(){
      .then(function(data){
          let html="";
          data.forEach(song => {
-             html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
+             html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
          });
          document.querySelector(".songs").innerHTML=html;
         
@@ -82,7 +83,7 @@ function cargarJSON(){
         let html="";
         let rockArray= data.filter(song => song.genres.includes("rock") )
         rockArray.forEach(song => {
-            html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -101,14 +102,14 @@ function cargarJSON(){
         let html="";
         let indieArray= data.filter(song => song.genres.includes("indie") )
         indieArray.forEach(song => {
-            html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
         
     };
 
-    //USER STORY 10: Dado que estoy en la página principal y veo una lista de canciones Cuando hago click en una de ellas Entonces se abre la página de la canción con toda su información
+   
   
 
 
@@ -135,7 +136,7 @@ function listaTop10(){
         
         let top10Array= dataOrdenado.slice(0,10);
         top10Array.forEach(song => {
-            html += `<li><a href=${song.url}><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></a></li>`
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
