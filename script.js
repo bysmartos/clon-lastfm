@@ -63,21 +63,11 @@ function cargarJSON(){
 
 
 //Helena escribe debajo de esta linea
+//U2
 const top10=document.querySelector("#top10")
 const overview=document.querySelector("#overview")
 overview.addEventListener('click', cargarJSON);
+//U5
 
 
-// window.addEventListener("load", cargarJSON);
-
-function cargarJSON(){
-    fetch("music.json")
-     .then(res => res.json())
-     .then(function(data){
-         let html="";
-         data.forEach(song => {
-             html += `<li>${song.name}</li>`
-         });
-         document.querySelector(".songs").innerHTML=html;
-     });
-}
+    
