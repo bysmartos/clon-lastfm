@@ -101,10 +101,24 @@ function cargarJSON(){
 
 //Helena escribe debajo de esta linea
 //U2
-const top10=document.querySelector("#top10")
 const overview=document.querySelector("#overview")
 overview.addEventListener('click', cargarJSON);
-//U5
+//U5 HIP HOP
+// let hiphop = document.querySelector(".hip-hop")
+//  indie.addEventListener("click", listaHiphop);
 
+ function listaHiphop(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let hiphopArray= data.filter(song => song.genres.includes("hip-hop", "trip-hop") )
+        hiphopArray.forEach(song => {
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        })
+        
+    };
 
     
