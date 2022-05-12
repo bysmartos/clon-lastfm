@@ -38,6 +38,9 @@ reggae: saturate(10%);
  ul {
 	list-style: none;
 }
+a {
+    all: unset;
+}
 
 /* layout*/
 body {
@@ -144,15 +147,20 @@ padding-left: 4.2rem;
     width: 2.4rem;
 }
 
+
  .songs {
     counter-reset: li;
     list-style: none;
 } 
 
-.songs > li:before {
+.songs > li> .songArtist:before {
     counter-increment: li;
     content: counter(li)". ";
-   ;
+}
+
+.songs > li> .songArtist:before {
+    counter-increment: li;
+    content: counter(li)". ";
 }
 
  .songBold{
