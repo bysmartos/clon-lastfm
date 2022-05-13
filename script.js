@@ -106,7 +106,6 @@ overview.addEventListener('click', cargarJSON);
 
 
 //U5 HIP HOP al hacer click en hip hop de la nav bar aparece la song list de ése género
-
 let hiphop = document.querySelector(".hip-hop")
  hiphop.addEventListener("click", listaHiphop);
 
@@ -125,4 +124,22 @@ let hiphop = document.querySelector(".hip-hop")
     };
     
 
-    
+    //U7 JAZZ al hacer click en JAZZ en la nav bar aparece la song list de ése género. Como no hay he puesto otro género
+
+let jazz = document.querySelector(".jazz")
+ jazz.addEventListener("click", listaJazz);
+
+ function listaJazz(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let jazzArray= data.filter(song => song.genres.includes("psychedelic") )
+        jazzArray.forEach(song => {
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        })
+        
+    };
+
