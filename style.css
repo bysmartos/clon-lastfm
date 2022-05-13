@@ -44,7 +44,7 @@ a {
 
 /* layout*/
 body {
-    background-color:  #fff;
+    background-color: #e4d8b4;
     font-family: Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
 }
 
@@ -175,7 +175,7 @@ padding-left: 4.2rem;
 }
 
 ol> :nth-child(odd){
-    background-color: #f2f2f2;
+    background-color: #c2b28f;
 } 
 
 
