@@ -101,7 +101,32 @@ function cargarJSON(){
 
 
 //Sara escribe debajo de esta linea
-
+let top10text = document.querySelector("#top10")
+ top10text.addEventListener("click", listaTop10);
+function listaTop10(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let dataOrdenado= data.sort(function (a, b) {
+                if (parseInt(a.listeners) > parseInt(b.listeners)) {
+                    return -1;
+                } else if (parseInt(a.listeners) < parseInt(b.listeners)) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+            console.log(dataOrdenado);
+        
+        let top10Array= dataOrdenado.slice(0,10);
+        top10Array.forEach(song => {
+            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        })
+        
+    };
 
 //Helena escribe debajo de esta linea
 //U2
@@ -120,7 +145,7 @@ let hiphop = document.querySelector(".hip-hop")
         let html="";
         let hiphopArray= data.filter(song => song.genres.includes("Hip-Hop") )
         hiphopArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
