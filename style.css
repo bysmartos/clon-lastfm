@@ -145,7 +145,11 @@ padding-left: 4.2rem;
 } 
 
 .songs>li>img {
-    width: 2.4rem;
+    width: 1.8rem;
+    background-color: transparent;
+    border-radius: rem;
+    margin-left: 1rem;
+    
 }
 
 
