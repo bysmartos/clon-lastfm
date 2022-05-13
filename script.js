@@ -67,7 +67,7 @@ function cargarJSON(){
         let html="";
         let rockArray= data.filter(song => song.genres.includes("rock") )
         rockArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -86,7 +86,7 @@ function cargarJSON(){
         let html="";
         let indieArray= data.filter(song => song.genres.includes("indie") )
         indieArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -96,29 +96,6 @@ function cargarJSON(){
 
 
     //colores sara
-
-let overviewMenu=document.getElementById("overview");
-
-overviewMenu.addEventListener("click", changeColor1);
-      function changeColor1(){ 
-        overviewMenu.style.color = "red";
-      }
-      
-let top10Listened=document.getElementById("top10");
-
-      top10Listened.addEventListener("click", changeColor2);
-            function changeColor2(){ 
-              top10Listened.style.color = "red";
-            top10Listened.removeEventListener('click',() =>{ top10Listened.style.color='pink'
-            })
-        }
-
-let theBiggest=document.getElementById("biggest");
-
-      theBiggest.addEventListener("click", changeColor3);
-            function changeColor3(){ 
-            theBiggest.style.color = "red";
-            }
 
   
 
@@ -143,7 +120,7 @@ let hiphop = document.querySelector(".hip-hop")
         let html="";
         let hiphopArray= data.filter(song => song.genres.includes("Hip-Hop") )
         hiphopArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -163,7 +140,7 @@ let jazz = document.querySelector(".jazz")
         let html="";
         let jazzArray= data.filter(song => song.genres.includes("psychedelic") )
         jazzArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
