@@ -56,6 +56,7 @@ function cargarJSON(){
      });
 }
 
+
  //USER STORY 4: Cuando clico en la opción "Rock" de la barra superior Entonces puedo ver un listado con las canciones más escuchadas del género rock
  let rock = document.querySelector(".rock")
  rock.addEventListener("click", listaRock);
@@ -96,8 +97,30 @@ function cargarJSON(){
 
 
     //colores sara
+    let overviewMenu=document.getElementById("overview");
+    overviewMenu.addEventListener("click", changeColor1);
+          function changeColor1(){ 
+            overviewMenu.style.color = "red";
+          }
+          
+    let top10Listened=document.getElementById("top10");
+          top10Listened.addEventListener("click", changeColor2);
+                function changeColor2(){ 
+                  top10Listened.style.color = "red";
+                top10Listened.removeEventListener('click',() =>{ top10Listened.style.color='pink'
+                })
+            }
+    let theBiggest=document.getElementById("biggest");
+          theBiggest.addEventListener("click", changeColor3);
+                function changeColor3(){ 
+                theBiggest.style.color = "red";
+                }
 
-  
+    // let testRock=document.querySelector(".rock");
+    // testRock.addEventListener("click", testrock);
+    //         function testrock(){ 
+    //         testRock.style.color = "red";
+    //         }                 
 
 
 //Sara escribe debajo de esta linea
