@@ -38,10 +38,13 @@ reggae: saturate(10%);
  ul {
 	list-style: none;
 }
+a {
+    all: unset;
+}
 
 /* layout*/
 body {
-    background-color:  #fff;
+    background-color: #e4d8b4;
     font-family: Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
 }
 
@@ -140,14 +143,25 @@ padding-left: 4.2rem;
    
 
 } 
+
 .songs>li>img {
-    width: 2.4rem;
+    width: 1.8rem;
+    background-color: transparent;
+    border-radius: rem;
+    margin-left: 1rem;
+    
 }
+
 
  .songs {
     counter-reset: li;
     list-style: none;
 } 
+
+.songs > li> .songArtist:before {
+    counter-increment: li;
+    content: counter(li)". ";
+}
 
 .songs > li> .songArtist:before {
     counter-increment: li;
@@ -166,7 +180,7 @@ padding-left: 4.2rem;
 }
 
 ol> :nth-child(odd){
-    background-color: #f2f2f2;
+    background-color: #c2b28f;
 } 
 
 
