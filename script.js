@@ -28,8 +28,7 @@
 
     
  //USER STORY 1: se carga el listado JSON  con todas las canciones al cargar la pagina  
- //USER STORY 10: Dado que estoy en la página principal y veo una lista de canciones Cuando hago click en una de ellas Entonces se abre la página de la canción con toda su información
- window.addEventListener("load", cargarJSON);
+window.addEventListener("load", cargarJSON);
 //Esto funciona, pero lo he copiado debajo para probar cosas y de momento funciona bien, me guardo este comentado por si lo necesito mas adelnate
 
 // function cargarJSON(){
@@ -43,19 +42,6 @@
 //          document.querySelector(".songs").innerHTML=html;
 //      });
 // }
-//Funciona bien, lo cometno para probar de hacer la user story 10
-// function cargarJSON(){
-//     fetch("music.json")
-//      .then(res => res.json())
-//      .then(function(data){
-//          let html="";
-//          data.forEach(song => {
-//              html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-//          });
-//          document.querySelector(".songs").innerHTML=html;
-         
-//      });
-// }
 
 function cargarJSON(){
     fetch("music.json")
@@ -63,14 +49,12 @@ function cargarJSON(){
      .then(function(data){
          let html="";
          data.forEach(song => {
-             html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+             html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
          });
          document.querySelector(".songs").innerHTML=html;
-        
          
      });
 }
-
 
  //USER STORY 4: Cuando clico en la opción "Rock" de la barra superior Entonces puedo ver un listado con las canciones más escuchadas del género rock
  let rock = document.querySelector(".rock")
@@ -83,7 +67,7 @@ function cargarJSON(){
         let html="";
         let rockArray= data.filter(song => song.genres.includes("rock") )
         rockArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -102,12 +86,13 @@ function cargarJSON(){
         let html="";
         let indieArray= data.filter(song => song.genres.includes("indie") )
         indieArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
         
     };
+    
 
 
     //colores sara
@@ -140,40 +125,48 @@ let theBiggest=document.getElementById("biggest");
 
 //Sara escribe debajo de esta linea
 
-// USER STORY 3:  Cuando clico en la opción "Top 10 listened"  puedo ver un listado con las 10 canciones más escuchadas
-let top10text = document.querySelector("#top10")
- top10text.addEventListener("click", listaTop10);
-function listaTop10(){
+
+//Helena escribe debajo de esta linea
+//U2
+const overview=document.querySelector("#overview")
+overview.addEventListener('click', cargarJSON);
+
+
+//U5 HIP HOP al hacer click en hip hop de la nav bar aparece la song list de ése género
+let hiphop = document.querySelector(".hip-hop")
+ hiphop.addEventListener("click", listaHiphop);
+
+ function listaHiphop(){
     fetch("music.json")
     .then(res => res.json())
     .then(function(data){
         let html="";
-        let dataOrdenado= data.sort(function (a, b) {
-                if (parseInt(a.listeners) > parseInt(b.listeners)) {
-                    return -1;
-                } else if (parseInt(a.listeners) < parseInt(b.listeners)) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            });
-            console.log(dataOrdenado);
-        
-        let top10Array= dataOrdenado.slice(0,10);
-        top10Array.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name}</a></span> <span class="songBold" ><a href=${song.url}>${song.name}</a></span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        let hiphopArray= data.filter(song => song.genres.includes("Hip-Hop") )
+        hiphopArray.forEach(song => {
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
         
     };
+    
 
+    //U7 JAZZ al hacer click en JAZZ en la nav bar aparece la song list de ése género. Como no hay he puesto otro género
 
+let jazz = document.querySelector(".jazz")
+ jazz.addEventListener("click", listaJazz);
 
-//Helena escribe debajo de esta linea
-//U2
-const top10=document.querySelector("#top10")
-const overview=document.querySelector("#overview")
-overview.addEventListener('click', cargarJSON);
-//U5
+ function listaJazz(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let jazzArray= data.filter(song => song.genres.includes("psychedelic") )
+        jazzArray.forEach(song => {
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        })
+        
+    };
 
