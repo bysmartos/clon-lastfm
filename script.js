@@ -215,11 +215,13 @@ let reggae = document.querySelector(".reggae")
 
 //Helena escribe debajo de esta linea
 //U2
+//HELENA
+//U2 al hacer click en overwieu se carga songs list
 const overview=document.querySelector("#overview")
 overview.addEventListener('click', cargarJSON);
 
 
-//U5 HIP HOP al hacer click en hip hop de la nav bar aparece la song list de ése género
+//U5 al hacer click en hip-hop nav bar, aparece songs list de ése género
 let hiphop = document.querySelector(".hip-hop")
  hiphop.addEventListener("click", listaHiphop);
 
@@ -236,11 +238,9 @@ let hiphop = document.querySelector(".hip-hop")
         })
         
     };
-    
+    //U7 al hacer click en Jazz nav bar aparece songs list de ése género. Como no hay jazz songs he filtrado por psychedelic genero.
 
-    //U7 JAZZ al hacer click en JAZZ en la nav bar aparece la song list de ése género. Como no hay he puesto otro género
-
-let jazz = document.querySelector(".jazz")
+ let jazz = document.querySelector(".jazz")
  jazz.addEventListener("click", listaJazz);
 
  function listaJazz(){
