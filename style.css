@@ -165,11 +165,6 @@ padding-left: 4.2rem;
     content: counter(li)". ";
 }
 
-.songs > li> .songArtist:before {
-    counter-increment: li;
-    content: counter(li)". ";
-}
-
  .songBold{
     font-weight: bold;
     width: 60%;     
@@ -190,3 +185,83 @@ li :nth-child(odd){
     background-color: transparent;
 } 
 
+/* .styleWords{
+    color: red;
+}
+
+.blackWords{
+    color:black;
+}
+
+.navMusicStyle>li{
+  text-align:center;
+  display:inline-block;
+  list-style:none;
+  position:relative;
+ 
+  
+  box-shadow:0 0 15px 0px #555;
+  transition:all 1s ease;
+  -o-transition:all 1s ease;
+  -moz-transition:all 1s ease;
+  -webkit-transition:all 1s ease;
+  
+
+
+}
+
+
+.navMusicStyle>li:hover{
+  top:0px;
+  opacity:0.5;
+}
+
+.navMusicStyle>li:nth-child(1){
+    transform:rotate(10deg);
+}
+
+.navMusicStyle>li:nth-child(2){
+    transform:rotate(6deg);
+}
+
+.navMusicStyle>li:nth-child(3){
+    transform:rotate(-10deg);
+}
+
+.navMusicStyle>li:nth-child(4){
+    transform:rotate(20deg);
+}
+
+.navMusicStyle>li:nth-child(5){
+    transform:rotate(-10deg);
+}
+
+.navMusicStyle>ul>li>p{
+  margin:-15px 0 0 0;
+}
+
+
+
+.light{
+  border-radius:50%;
+  position:absolute;
+  left:0;
+  right:0;
+  width:700px;
+  height:700px;
+  background:#fff;
+  filter:blur(100px);
+  opacity:0.3;
+  pointer-events:none;
+}
+
+
+.navMusicEvent {
+   
+    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: sepia(90%) opacity(40%);
+   
+} */

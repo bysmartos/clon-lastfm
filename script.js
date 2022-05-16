@@ -97,24 +97,56 @@ function cargarJSON(){
 
 
     //colores sara
-    let overviewMenu=document.getElementById("overview");
-    overviewMenu.addEventListener("click", changeColor1);
-          function changeColor1(){ 
-            overviewMenu.style.color = "red";
-          }
+    // let overviewMenu=document.getElementById("overview");
+    // overviewMenu.addEventListener("click", changeColor1);
+    //       function changeColor1(){ 
+    //         overviewMenu.classList=("styleWords");
+    //         top10Listened.classList = ("blackWords");
+    //         theBiggest.classList = ("blackWords");
+    //         rockEventStyle.classList = ("rock");
+    //       }
           
-    let top10Listened=document.getElementById("top10");
-          top10Listened.addEventListener("click", changeColor2);
-                function changeColor2(){ 
-                  top10Listened.style.color = "red";
-                top10Listened.removeEventListener('click',() =>{ top10Listened.style.color='pink'
-                })
-            }
-    let theBiggest=document.getElementById("biggest");
-          theBiggest.addEventListener("click", changeColor3);
-                function changeColor3(){ 
-                theBiggest.style.color = "red";
-                }
+    // let top10Listened=document.getElementById("top10");
+    //       top10Listened.addEventListener("click", changeColor2);
+    //             function changeColor2(){ 
+    //               top10Listened.classList = ("styleWords");
+    //               overviewMenu.classList=("blackWords");
+    //               theBiggest.classList = ("blackWords");
+               
+    //         }
+    // let theBiggest=document.getElementById("biggest");
+    //       theBiggest.addEventListener("click", changeColor3);
+    //             function changeColor3(){ 
+    //             theBiggest.classList = ("styleWords");
+    //             top10Listened.classList = ("blackWords");
+    //             overviewMenu.classList=("blackWords");
+    //             }
+
+    //             let cvb=document.getElementById("overview");
+    // overviewMenu.addEventListener("click", changeColor1);
+    //       function changeColor1(){ 
+    //         overviewMenu.classList=("styleWords");
+    //         top10Listened.classList = ("blackWords");
+    //         theBiggest.classList = ("blackWords");
+            
+    //       }
+          
+    // let rockEventStyle=document.querySelector(".rock");
+    // rockEventStyle.addEventListener("click", changeColor4);
+    //             function changeColor4(){ 
+    //                 rockEventStyle.classList = ("navMusicEvent");
+    //                 top10Listened.classList = ("blackWords");
+    //               overviewMenu.classList=("blackWords");
+    //               theBiggest.classList = ("blackWords");
+               
+    //         }
+    // let fsdfsd=document.getElementById("biggest");
+    //       theBiggest.addEventListener("click", changeColor3);
+    //             function changeColor3(){ 
+    //             theBiggest.classList = ("styleWords");
+    //             top10Listened.classList = ("blackWords");
+    //             overviewMenu.classList=("blackWords");
+    //             }
 
     // let testRock=document.querySelector(".rock");
     // testRock.addEventListener("click", testrock);
