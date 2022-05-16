@@ -101,6 +101,7 @@ function cargarJSON(){
 
 
 //Sara escribe debajo de esta linea
+
 let top10text = document.querySelector("#top10")
  top10text.addEventListener("click", listaTop10);
 function listaTop10(){
@@ -148,7 +149,67 @@ let reggae = document.querySelector(".reggae")
         })
     }
 
+    /*User story 9*/ 
+
+
+    
+    let overviewMenu=document.getElementById("overview");
+     overviewMenu.addEventListener("click",clickorder1);
+    let top10Listened=document.getElementById("top10");
+    top10Listened.addEventListener("click", clickorder2);
+    let theBiggest=document.getElementById("biggest");
+    theBiggest.addEventListener("click", clickorder3);
+    
+     
+   function clickorder1(){
+       overviewMenu.style.color="red"
+       top10Listened.style.color="black"
+       theBiggest.style.color="black"
+    } 
+    function clickorder2(){
+        overviewMenu.style.color="black"
+        top10Listened.style.color="red"
+        theBiggest.style.color="black"
+    }
    
+    function clickorder3(){
+        overviewMenu.style.color="black"
+        top10Listened.style.color="black"
+        theBiggest.style.color="red"
+
+    }
+
+/*Efecto Hoover miniaturas*/
+
+
+     
+  
+    
+   
+
+
+
+
+
+
+
+
+
+    
+
+
+
+       
+    
+
+
+          
+
+         
+            
+                
+
+    
       
       
 
