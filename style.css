@@ -44,13 +44,13 @@ a {
 
 /* layout*/
 body {
-    background-color: #e4d8b4;
+    background-color:#f4debe;
     font-family: Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
 }
 
 /*header*/
 header {
-    background-color: #f5aa5f ;
+    background-color: #847b45 ;
     height: 2.8rem;
     display: flex;
     justify-content: center;
