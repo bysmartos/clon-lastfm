@@ -67,6 +67,7 @@ header>img {
     display: flex;
     justify-content: center;
     color: white;
+    margin: 2.8rem;
 }
 .navMusicStyle>li{
     box-sizing:border-box;
@@ -84,10 +85,10 @@ header>img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: sepia(90%);
+    filter: drop-shadow(5px 5px 10px #B90000);
     box-shadow: 0px 0px 10px 10px rgba (255,210,82,1);
     transform: scale (4);
-    opacity: 0.7;
+    /* opacity: 0.7; */
     
 }
 
@@ -96,24 +97,26 @@ header>img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: drop-shadow(5px 5px 10px #B90000) contrast(150%);
 }
 
 
   
 .indie{
-    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg") ;
+    background-image: url("/FemTech-FF5/ClonFM/clon-lastfm/indie.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: grayscale(50%);
+    filter: drop-shadow(5px 5px 10px #B90000);
+    
 }
 
 .jazz{
-    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg") ;
+    background-image: url("/FemTech-FF5/ClonFM/clon-lastfm/jazz.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: hue-rotate(90deg);;
+    filter: drop-shadow(5px 5px 10px #B90000);
 }
 
 .reggae{
@@ -121,7 +124,7 @@ header>img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: saturate(10%);;
+    filter: drop-shadow(5px 5px 10px #B90000);
 }
 
 /*Efecto hoover en las miniaturas*/
@@ -198,13 +201,7 @@ li :nth-child(odd){
     background-color: transparent;
 } 
 
-/* .styleWords{
-    color: red;
-}
 
-.blackWords{
-    color:black;
-}
 
 .navMusicStyle>li{
   text-align:center;
@@ -234,19 +231,19 @@ li :nth-child(odd){
 }
 
 .navMusicStyle>li:nth-child(2){
-    transform:rotate(6deg);
+    transform:rotate(10deg);
 }
 
 .navMusicStyle>li:nth-child(3){
-    transform:rotate(-10deg);
+    transform:rotate(10deg);
 }
 
 .navMusicStyle>li:nth-child(4){
-    transform:rotate(20deg);
+    transform:rotate(10deg);
 }
 
 .navMusicStyle>li:nth-child(5){
-    transform:rotate(-10deg);
+    transform:rotate(10deg);
 }
 
 .navMusicStyle>ul>li>p{
@@ -269,12 +266,4 @@ li :nth-child(odd){
 }
 
 
-.navMusicEvent {
-   
-    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg") ;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: sepia(90%) opacity(40%);
-   
-} */
+

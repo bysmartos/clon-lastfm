@@ -71,6 +71,7 @@ function cargarJSON(){
             html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="Rock";
         })
         
     };
@@ -90,6 +91,7 @@ function cargarJSON(){
             html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="Indie";
         })
         
     };
@@ -180,6 +182,7 @@ function listaTop10(){
             html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="Top 10 listened";
         })
         
     };
@@ -201,6 +204,7 @@ let reggae = document.querySelector(".reggae")
             html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="Reggae";
         })
     }
 
@@ -290,6 +294,7 @@ let hiphop = document.querySelector(".hip-hop")
             html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="HipHop";
         })
         
     };
@@ -308,6 +313,7 @@ let hiphop = document.querySelector(".hip-hop")
             html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="Jazz";
         })
         
     };
