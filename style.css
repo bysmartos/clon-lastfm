@@ -81,23 +81,24 @@ header>img {
 }
 
 .rock{
-    background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg") ;
+    background-image: url("/FemTech-FF5/ClonFM/clon-lastfm/rock.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: drop-shadow(5px 5px 10px #B90000);
+    filter: drop-shadow(5px 5px 10px #B90000 ) ;
     box-shadow: 0px 0px 10px 10px rgba (255,210,82,1);
     transform: scale (4);
-    /* opacity: 0.7; */
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
     
 }
 
 .hip-hop{
-    background-image: url( "https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg") ;
+    background-image: url( "/FemTech-FF5/ClonFM/clon-lastfm/hiphop.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: drop-shadow(5px 5px 10px #B90000) contrast(150%);
+    filter: drop-shadow(5px 5px 10px #B90000);
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 
 
@@ -107,7 +108,9 @@ header>img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: drop-shadow(5px 5px 10px #B90000);
+    filter: drop-shadow(5px 5px 10px #B90000) ;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
+   
     
 }
 
@@ -116,7 +119,8 @@ header>img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: drop-shadow(5px 5px 10px #B90000);
+    filter: drop-shadow(5px 5px 10px #B90000) ;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 
 .reggae{
@@ -124,7 +128,8 @@ header>img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: drop-shadow(5px 5px 10px #B90000);
+    filter: drop-shadow(5px 5px 10px #B90000) ;
+    text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 
 /*Efecto hoover en las miniaturas*/

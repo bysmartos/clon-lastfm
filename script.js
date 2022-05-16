@@ -52,6 +52,7 @@ function cargarJSON(){
              html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
          });
          document.querySelector(".songs").innerHTML=html;
+         document.querySelector("#titleSongsContainer").innerHTML="Overview";
          
      });
 }
@@ -95,67 +96,29 @@ function cargarJSON(){
         })
         
     };
+
+    //USER STORY 12
+ let biggest = document.querySelector("#biggest")
+ biggest.addEventListener("click", listaBiggest);
+
+ function listaBiggest(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let biggestArray= data.filter(song => song.artist.name.includes("Radiohead") )
+        biggestArray.forEach(song => {
+            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        document.querySelector("#titleSongsContainer").innerHTML="The Biggest";
+        })
+        
+    };
     
 
 
-    //colores sara
-    // let overviewMenu=document.getElementById("overview");
-    // overviewMenu.addEventListener("click", changeColor1);
-    //       function changeColor1(){ 
-    //         overviewMenu.classList=("styleWords");
-    //         top10Listened.classList = ("blackWords");
-    //         theBiggest.classList = ("blackWords");
-    //         rockEventStyle.classList = ("rock");
-    //       }
-          
-    // let top10Listened=document.getElementById("top10");
-    //       top10Listened.addEventListener("click", changeColor2);
-    //             function changeColor2(){ 
-    //               top10Listened.classList = ("styleWords");
-    //               overviewMenu.classList=("blackWords");
-    //               theBiggest.classList = ("blackWords");
-               
-    //         }
-    // let theBiggest=document.getElementById("biggest");
-    //       theBiggest.addEventListener("click", changeColor3);
-    //             function changeColor3(){ 
-    //             theBiggest.classList = ("styleWords");
-    //             top10Listened.classList = ("blackWords");
-    //             overviewMenu.classList=("blackWords");
-    //             }
-
-    //             let cvb=document.getElementById("overview");
-    // overviewMenu.addEventListener("click", changeColor1);
-    //       function changeColor1(){ 
-    //         overviewMenu.classList=("styleWords");
-    //         top10Listened.classList = ("blackWords");
-    //         theBiggest.classList = ("blackWords");
-            
-    //       }
-          
-    // let rockEventStyle=document.querySelector(".rock");
-    // rockEventStyle.addEventListener("click", changeColor4);
-    //             function changeColor4(){ 
-    //                 rockEventStyle.classList = ("navMusicEvent");
-    //                 top10Listened.classList = ("blackWords");
-    //               overviewMenu.classList=("blackWords");
-    //               theBiggest.classList = ("blackWords");
-               
-    //         }
-    // let fsdfsd=document.getElementById("biggest");
-    //       theBiggest.addEventListener("click", changeColor3);
-    //             function changeColor3(){ 
-    //             theBiggest.classList = ("styleWords");
-    //             top10Listened.classList = ("blackWords");
-    //             overviewMenu.classList=("blackWords");
-    //             }
-
-    // let testRock=document.querySelector(".rock");
-    // testRock.addEventListener("click", testrock);
-    //         function testrock(){ 
-    //         testRock.style.color = "red";
-    //         }                 
-
+    
 
 //Sara escribe debajo de esta linea
 
