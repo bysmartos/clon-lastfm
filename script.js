@@ -198,7 +198,7 @@ let reggae = document.querySelector(".reggae")
         let html="";
         let reggaeArray= data.filter(song => song.genres.includes("alternative") )
         reggaeArray.forEach(song => {
-            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
         });
         document.querySelector(".songs").innerHTML=html;
         })
@@ -217,20 +217,20 @@ let reggae = document.querySelector(".reggae")
     
      
    function clickorder1(){
-       overviewMenu.style.color="red"
+       overviewMenu.style.color="rgb(186,0,0)"
        top10Listened.style.color="black"
        theBiggest.style.color="black"
     } 
     function clickorder2(){
         overviewMenu.style.color="black"
-        top10Listened.style.color="red"
+        top10Listened.style.color="rgb(186,0,0)"
         theBiggest.style.color="black"
     }
    
     function clickorder3(){
         overviewMenu.style.color="black"
         top10Listened.style.color="black"
-        theBiggest.style.color="red"
+        theBiggest.style.color="rgb(186,0,0)"
 
     }
 
