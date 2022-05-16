@@ -156,6 +156,7 @@ function cargarJSON(){
 
 
 //Sara escribe debajo de esta linea
+
 let top10text = document.querySelector("#top10")
  top10text.addEventListener("click", listaTop10);
 function listaTop10(){
@@ -183,6 +184,92 @@ function listaTop10(){
         
     };
 
+   /**User story 8**
+    Cuando clico en la opción "Reggae",
+puedo ver un listado con las canciones más escuchadas del género reggae*/
+
+let reggae = document.querySelector(".reggae")
+ reggae.addEventListener("click", listaReggae);
+
+   function listaReggae(){
+    fetch("music.json")
+    .then(res => res.json())
+    .then(function(data){
+        let html="";
+        let reggaeArray= data.filter(song => song.genres.includes("alternative") )
+        reggaeArray.forEach(song => {
+            html += `<li><img src="https://img2.freepng.es/20180827/ze/kisspng-computer-icons-clip-art-portable-network-graphics-icons-for-free-glyphpack-5b8492aa350d03.4427377915354149542173.jpg" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+        });
+        document.querySelector(".songs").innerHTML=html;
+        })
+    }
+
+    /*User story 9*/ 
+
+
+    
+    let overviewMenu=document.getElementById("overview");
+     overviewMenu.addEventListener("click",clickorder1);
+    let top10Listened=document.getElementById("top10");
+    top10Listened.addEventListener("click", clickorder2);
+    let theBiggest=document.getElementById("biggest");
+    theBiggest.addEventListener("click", clickorder3);
+    
+     
+   function clickorder1(){
+       overviewMenu.style.color="red"
+       top10Listened.style.color="black"
+       theBiggest.style.color="black"
+    } 
+    function clickorder2(){
+        overviewMenu.style.color="black"
+        top10Listened.style.color="red"
+        theBiggest.style.color="black"
+    }
+   
+    function clickorder3(){
+        overviewMenu.style.color="black"
+        top10Listened.style.color="black"
+        theBiggest.style.color="red"
+
+    }
+
+/*Efecto Hoover miniaturas*/
+
+
+     
+  
+    
+   
+
+
+
+
+
+
+
+
+
+    
+
+
+
+       
+    
+
+
+          
+
+         
+            
+                
+
+    
+      
+      
+
+//Helena escribe debajo de esta linea
+//U2
 //HELENA
 //U2 al hacer click en overwieu se carga songs list
 const overview=document.querySelector("#overview")
