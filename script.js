@@ -101,24 +101,72 @@ function cargarJSON(){
  let biggest = document.querySelector("#biggest")
  biggest.addEventListener("click", listaBiggest);
 
- function listaBiggest(){
-    fetch("music.json")
-    .then(res => res.json())
-    .then(function(data){
-        let html="";
-        let biggestArray= data.filter(song => song.artist.name.includes("Radiohead") )
-        biggestArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-        });
-        document.querySelector(".songs").innerHTML=html;
-        document.querySelector("#titleSongsContainer").innerHTML="The Biggest";
-        })
+//  function listaBiggest(){
+//     fetch("music.json")
+//     .then(res => res.json())
+//     .then(function(data){
+//         let html="";
+//         let biggestArray= data.filter(song => song.artist.name.includes("Radiohead") )
+//         biggestArray.forEach(song => {
+//             html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+//         });
+//         document.querySelector(".songs").innerHTML=html;
+//         document.querySelector("#titleSongsContainer").innerHTML="The Biggest";
+//         })
         
-    };
-    
+//     };
 
 
+
+    function listaBiggest(){
+        fetch("music.json")
+        .then(res => res.json())
+        .then(function(data){
+            let html="";
+            let arrayArtistas = data.reduce((artistaSinRepetir, currentArtista) =>{
+
+                if(!artistaSinRepetir.find(d => d == currentArtista.artist.name)) {
+                    artistaSinRepetir.push(currentArtista.artist.name)
+                } 
+                return artistaSinRepetir;
+               }, [])
+           
+               console.log( arrayArtistas);
+               arrayArtistas = arrayArtistas.map(function(elemento){
+                return {name: elemento};
+              });
+
+              console.log(arrayArtistas)
+
+            arrayArtistas.forEach(artist => {
+                let filter = data.filter(a => a.artist.name.includes(artist.name)) 
+                console.log(filter);
+                let contador= filter.reduce((a ,b) => a + parseInt(b.listeners),0)
+                artist.listeners= contador;
+            })
+            console.log(arrayArtistas)
+            let dataOrdenado= arrayArtistas.sort(function (a, b) {
+                if (a.listeners > b.listeners) {
+                    return -1;
+                } else if (a.listeners < b.listeners) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            });
+            console.log(dataOrdenado);
+            let grupoBiggest= dataOrdenado[0].name;
+             let biggestArray= data.filter(song => song.artist.name.includes(grupoBiggest) )
+                biggestArray.forEach(song => {
+                    html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+                });
+                document.querySelector(".songs").innerHTML=html;
+                document.querySelector("#titleSongsContainer").innerHTML="The Biggest";
+                })
+
+    }
     
+       
 
 //Sara escribe debajo de esta linea
 
