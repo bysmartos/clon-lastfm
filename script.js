@@ -2,46 +2,14 @@
 
 
 //Sandra escribe debajo de esta linea 
-//Las proximas tres lienas comentadas son de test para combrobar
-// que funciona bien el docuemtno js
+//Esto es para ver el array en la consola
 
-    // document.addEventListener("click", colorear)
-
-    // function colorear(){
-    //     document.querySelector(".navMusicStyle").style.backgroundColor="pink"
-    // }
-  // Esto es simplemente para ver el array en consola por si lo queremos consultar
     fetch("music.json")
     .then(res => res.json())
     .then(data=>console.log(data));
-
-
-//esto es otro test para ver si el window....load.. funciona.
-    // window.addEventListener("load", colorear)
-
-    // function colorear(){
-    //     document.querySelector(".navMusicStyle").style.backgroundColor="pink"
-    // }
-    
-
-
-
     
  //USER STORY 1: se carga el listado JSON  con todas las canciones al cargar la pagina  
 window.addEventListener("load", cargarJSON);
-//Esto funciona, pero lo he copiado debajo para probar cosas y de momento funciona bien, me guardo este comentado por si lo necesito mas adelnate
-
-// function cargarJSON(){
-//     fetch("music.json")
-//      .then(res => res.json())
-//      .then(function(data){
-//          let html="";
-//          data.forEach(song => {
-//              html += `<li>${song.artist.name} ${song.name} ${song.listeners} listeners</li>`
-//          });
-//          document.querySelector(".songs").innerHTML=html;
-//      });
-// }
 
 function cargarJSON(){
     fetch("music.json")
@@ -100,23 +68,6 @@ function cargarJSON(){
     //USER STORY 12
  let biggest = document.querySelector("#biggest")
  biggest.addEventListener("click", listaBiggest);
-
-//  function listaBiggest(){
-//     fetch("music.json")
-//     .then(res => res.json())
-//     .then(function(data){
-//         let html="";
-//         let biggestArray= data.filter(song => song.artist.name.includes("Radiohead") )
-//         biggestArray.forEach(song => {
-//             html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-//         });
-//         document.querySelector(".songs").innerHTML=html;
-//         document.querySelector("#titleSongsContainer").innerHTML="The Biggest";
-//         })
-        
-//     };
-
-
 
     function listaBiggest(){
         fetch("music.json")
