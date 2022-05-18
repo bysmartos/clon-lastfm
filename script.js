@@ -1,5 +1,15 @@
 //RECORDATORIO: ID PONIENDO COMENTARIOS EN VUESTRA PARTE SOBRE LO QUE ESTAIS HACIENDO
 
+// //Funcion test suma
+
+// export const sumar = (a,b) => {
+
+//     if(a===0 || b===0){
+//         return 0;
+//     } else{
+//   return  a+b
+// }
+// };
 
 //Sandra escribe debajo de esta linea 
 //Esto es para ver el array en la consola
@@ -25,7 +35,16 @@ function cargarJSON(){
      });
 }
 
-
+// FUNCION PARA FILTRO ESTILO MUSICAL
+function filtrarEstilo(array,estilo,titulo){
+    let html="";
+    let rockArray= array.filter(song => song.genres.includes(estilo) )
+    rockArray.forEach(song => {
+        html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
+    });
+    document.querySelector(".songs").innerHTML=html;
+    document.querySelector("#titleSongsContainer").innerHTML=titulo;
+    }
  //USER STORY 4: Cuando clico en la opción "Rock" de la barra superior Entonces puedo ver un listado con las canciones más escuchadas del género rock
  let rock = document.querySelector(".rock")
  rock.addEventListener("click", listaRock);
@@ -33,19 +52,13 @@ function cargarJSON(){
  function listaRock(){
     fetch("music.json")
     .then(res => res.json())
-    .then(function(data){
-        let html="";
-        let rockArray= data.filter(song => song.genres.includes("rock") )
-        rockArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-        });
-        document.querySelector(".songs").innerHTML=html;
-        document.querySelector("#titleSongsContainer").innerHTML="Rock";
-        })
-        
-    };
+    .then(data=>filtrarEstilo(data,"rock","Rock") )     
+ };
 
-    
+   
+
+
+
  //USER STORY 6: Cuando clico en la opción "Rock" de la barra superior Entonces puedo ver un listado con las canciones más escuchadas del género rock
  let indie = document.querySelector(".indie")
  indie.addEventListener("click", listaIndie);
@@ -53,15 +66,7 @@ function cargarJSON(){
  function listaIndie(){
     fetch("music.json")
     .then(res => res.json())
-    .then(function(data){
-        let html="";
-        let indieArray= data.filter(song => song.genres.includes("indie") )
-        indieArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-        });
-        document.querySelector(".songs").innerHTML=html;
-        document.querySelector("#titleSongsContainer").innerHTML="Indie";
-        })
+    .then(data=>filtrarEstilo(data,"indie","Indie"))
         
     };
 
@@ -159,15 +164,7 @@ let reggae = document.querySelector(".reggae")
    function listaReggae(){
     fetch("music.json")
     .then(res => res.json())
-    .then(function(data){
-        let html="";
-        let reggaeArray= data.filter(song => song.genres.includes("alternative") )
-        reggaeArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" >  ${song.artist.name}</span> <span class="songBold" >${song.name}</span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-        });
-        document.querySelector(".songs").innerHTML=html;
-        document.querySelector("#titleSongsContainer").innerHTML="Reggae";
-        })
+    .then(data=>filtrarEstilo(data,"alternative","Reggae"))
     }
 
     /*User story 9*/ 
@@ -200,39 +197,7 @@ let reggae = document.querySelector(".reggae")
 
     }
 
-/*Efecto Hoover miniaturas*/
-
-
-     
   
-    
-   
-
-
-
-
-
-
-
-
-
-    
-
-
-
-       
-    
-
-
-          
-
-         
-            
-                
-
-    
-      
-      
 
 //Helena escribe debajo de esta linea
 //U2
@@ -249,15 +214,7 @@ let hiphop = document.querySelector(".hip-hop")
  function listaHiphop(){
     fetch("music.json")
     .then(res => res.json())
-    .then(function(data){
-        let html="";
-        let hiphopArray= data.filter(song => song.genres.includes("Hip-Hop") )
-        hiphopArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr="" ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-        });
-        document.querySelector(".songs").innerHTML=html;
-        document.querySelector("#titleSongsContainer").innerHTML="HipHop";
-        })
+    .then(data=>filtrarEstilo(data,"Hip-Hop","Hip-Hop"))
         
     };
     //U7 al hacer click en Jazz nav bar aparece songs list de ése género. Como no hay jazz songs he filtrado por psychedelic genero.
@@ -268,15 +225,7 @@ let hiphop = document.querySelector(".hip-hop")
  function listaJazz(){
     fetch("music.json")
     .then(res => res.json())
-    .then(function(data){
-        let html="";
-        let jazzArray= data.filter(song => song.genres.includes("psychedelic") )
-        jazzArray.forEach(song => {
-            html += `<li><img src="logoMusica.png" atr=""/ ><span class="songArtist" > <a href=${song.artist.url}> ${song.artist.name} </a> </span> <span class="songBold"> <a href=${song.url}> ${song.name} </a> </span><span class="listEnd"> ${song.listeners} listeners</span></li>`
-        });
-        document.querySelector(".songs").innerHTML=html;
-        document.querySelector("#titleSongsContainer").innerHTML="Jazz";
-        })
+    .then(data=>filtrarEstilo(data,"psychedelic","Jazz"))
         
     };
 
