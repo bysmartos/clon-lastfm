@@ -132,13 +132,7 @@ header>img {
     text-shadow: -2px -2px 1px #000, 2px 2px 1px #000, -2px 2px 1px #000, 2px -2px 1px #000;
 }
 
-/*Efecto hoover en las miniaturas*/
 
-.changeeffectfoto {
-   filter:blur(8px);
-   transition: all 0.5s;
-
-}
 
 /*nav de las tres opciones de lista: overview, top 10, the biggest*/
 

@@ -1,16 +1,5 @@
 //RECORDATORIO: ID PONIENDO COMENTARIOS EN VUESTRA PARTE SOBRE LO QUE ESTAIS HACIENDO
 
-// //Funcion test suma
-
-// export const sumar = (a,b) => {
-
-//     if(a===0 || b===0){
-//         return 0;
-//     } else{
-//   return  a+b
-// }
-// };
-
 //Sandra escribe debajo de esta linea 
 //Esto es para ver el array en la consola
 
